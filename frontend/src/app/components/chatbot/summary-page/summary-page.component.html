@@ -1,0 +1,32 @@
+<div class="chat-summary-container">
+    <div class="summary-sidebar">
+        <h3>Chat Summaries</h3>
+        <small>This section contains the summaries of your conversations. You can view details and download them.</small>
+        <hr />
+        <div class="search-bar">
+            <input type="text" placeholder="Search conversation.." [(ngModel)]="searchQuery" />
+        </div>
+    </div>
+    <div class="summary-table-container">
+        <table class="summary-table">
+            <thead>
+                <tr>
+                    <th>Conversation ID</th>
+                    <th>Created Date</th>
+                    <th>Summary</th>
+                    <th>Download Transcript</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let summary of filteredConversation">
+                    <td>{{ summary.conversationId }}</td>
+                    <td>{{ summary.createdAt | date: 'medium' }}</td>
+                    <td class="summary_col">{{ summary.summary }}</td>
+                    <td class="download-btn">
+                        <button class="btn-download" (click)="downloadSummary(summary)"><i class="fa fa-download" aria-hidden="true"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+.error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1e1e1e; /* Dark background */
+    color: #ffffff;
+    font-family: 'Raleway', sans-serif;
+}
+
+.error-content {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.error-code {
+    font-size: 5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.error-message-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    
+}
+
+.error-description,
+.error-suggestion {
+    font-size: 1rem;
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+.btn-primary {
+    margin-top: 1rem;
+    padding: 10px 20px;
+    background: #4CAF50; /* Green accent */
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #388E3C;
+}

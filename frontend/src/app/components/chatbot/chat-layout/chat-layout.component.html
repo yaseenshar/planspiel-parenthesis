@@ -1,0 +1,7 @@
+<div class="chat-container">
+  <app-conversation-sidebar [conversations]="conversations" [activeConversationId]="activeConversationId"
+    (conversationSelected)="onConversationSelected($event)" (menuSelected)="onMenuChange($event)">
+  </app-conversation-sidebar>
+
+  <router-outlet></router-outlet>
+</div>

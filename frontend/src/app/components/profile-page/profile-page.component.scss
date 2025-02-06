@@ -1,0 +1,95 @@
+/*.profile-container {
+    max-width: 450px; 
+    margin: 7rem auto; 
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  
+    h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+  
+    .profile-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+  
+      .profile-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #eee;
+  
+        &:last-child {
+          border-bottom: none;
+        }
+  
+        label {
+          font-weight: bold;
+          color: #555;
+        }
+  
+        span {
+          color: #007bff;
+          font-weight: 500;
+          word-break: break-word;
+        }
+      }
+    }
+  }
+    */
+
+    .profile-container {
+        max-width: 450px; /* Keeps the width compact */
+        margin: 7rem auto; /* Ensures proper spacing from the top */
+        padding: 1.5rem;
+        background: #260707;
+        border: 1px solid #ddd; /* Light border to separate from the background */
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        font-family: Arial, sans-serif;
+      
+        h2 {
+          text-align: center;
+          font-size: 1.8rem;
+          margin-bottom: 1.5rem;
+          color: wheat; /* Dark grey for headings */
+        }
+      
+        .profile-info {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+      
+          .profile-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee; /* Light border between items */
+      
+            &:last-child {
+              border-bottom: none; /* No border for the last item */
+            }
+      
+            label {
+              font-weight: bold;
+              color: white; /* Lighter grey for labels */
+            }
+      
+            span {
+              color: #ffcc00;; /* Blue color for the profile details */
+              font-weight: 500;
+              word-break: break-word; /* Ensures long words are wrapped */
+            }
+          }
+        }
+      }
+      

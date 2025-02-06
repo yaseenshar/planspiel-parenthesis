@@ -1,0 +1,46 @@
+
+<div class="chatbot-container d-flex align-items-center">
+    <!-- Header -->
+    <div class="chatbot-header" #headerMain>
+        <h2>PARENTHESIS</h2>
+        <i class="tagline">Your trusted security advisor for product design and development.</i>
+        <p class="how-can-i-help" #howCanIHelp>How can I help you today?</p>
+    </div>
+
+    <!-- Chat Window -->
+    <div class="chat-window" id="chatWindow" #chatWindow>
+        <div *ngFor="let chat of chatMessages" class="chat-message" [class.bot]="chat.isBot" [class.user]="!chat.isBot">
+            <!-- Profile Image -->
+            <img [src]="chat.isBot ? 'assets/bot.png' : 'assets/user.png'" class="profile-pic"
+                alt="Profile" />          
+            <!-- Message -->
+            <div class="message"  [innerHTML]="chat.message"></div>
+        </div>
+    </div>
+    
+    <div class="progress-bar-container" *ngIf="loading">
+        <div class="progress-bar"></div>
+    </div>
+    <div class="input-section">
+        <!-- Quick Action Buttons -->
+        <div class="quick-actions">
+            <button (click)="quickReply('Run a security scan')">Run a Security Scan</button>
+            <button (click)="quickReply('Check for vulnerabilities')">Check for Vulnerabilities</button>
+            <button (click)="quickReply('Generate a report')">Generate a Report</button>
+        </div>
+
+        <!-- Input Area -->
+        <div class="chat-input">
+            <label class="upload-btn" title="Coming Soon! Upload your requirement documents for faster communication">
+            <img src="assets/p1.png" width="30px" height="30px"/>
+            <input title="Coming Soon! Upload your requirement documents for faster communication" type="file" accept="application/pdf" (change)="onFileSelected($event)" hidden />
+            </label>
+
+            <textarea [(ngModel)]="userMessage" placeholder="Type a message..." (input)="adjustTextareaHeight()" (keyup.enter)="sendMessage()" rows="1" class="chat-input-textarea"></textarea>
+
+            <button ng-disabled="!loading" (keydown.enter)="sendMessage()" (click)="sendMessage()">Send</button>
+        </div>      
+    </div>
+</div>
+
+

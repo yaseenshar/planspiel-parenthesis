@@ -1,0 +1,93 @@
+body, .body-container {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #1e1e2f;
+    color: #ffffff;
+}
+
+.login-container {
+    text-align: center;
+    background: #2c2c3e;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    width: 350px;
+}
+
+.logo {
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background: #3c3c4e;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    margin: 10px 0;
+    text-align: left;
+    color: #ffffff;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.error {
+    color: #ff4d4d;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.footer {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #aaa;
+}
+
+.footer a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,16 @@
+<nav class="navbar">
+  <img src="/assets/logo/parenthesis_logo.png" alt="Parenthesis Logo" class="logo" routerLink="/public">
+  <ul class="nav-links">
+<!--     
+    <li><a *ngIf="isLoggedIn" routerLink="/profile">My Profile</a></li>
+    <li><a routerLink="/chat">Home</a></li>
+    <li><a routerLink="/vision">Vision</a></li>
+    <li><a routerLink="/vision">About Us</a></li>
+    <li><a routerLink="/vision">Research Work</a></li>
+    <li><a routerLink="/vision">Contact Us</a></li> -->
+  </ul>
+  <div class="action-buttons">
+    <button *ngIf="isLoggedIn" class="btn-get-started" (click)="onLogout()">LOGOUT</button>
+    <button *ngIf="!isLoggedIn" class="btn-get-started" routerLink="/login">LOGIN</button>
+  </div>
+</nav>

@@ -1,0 +1,19 @@
+<div class="human-loop-container">
+    <h3>Get A Human In The Loop</h3>
+    <small>Enhance your AI-driven interactions with human expertise. This page provides a summary of your current conversation and allows you to send a direct message to our team for further assistance</small>
+    <hr />
+    
+
+    <!-- User Message Input -->
+    <div class="message-section">
+        <!-- Auto-Generated Chat Summary -->
+        <div class="summary-section" *ngIf="chatSummary">
+            <p *ngIf="chatSummary">A summary of your interaction (GUID: 05919210-2fb5-bca4-8fd3-fca5fce4341d) has been generated and will be attached with this mail. You can download it <a (click)="downloadSummary()">here</a>.</p>
+        </div>
+        <small *ngIf="(success)" class="success">{{success}}</small>
+        <small *ngIf="(error)" class="error">{{error}}</small>
+        <h4>Your Message</h4>
+        <textarea [(ngModel)]="userMessage" placeholder="Write your message..."></textarea>
+        <button class="btn btn-send" (click)="sendToAdmin()">Send</button>
+    </div>
+</div>

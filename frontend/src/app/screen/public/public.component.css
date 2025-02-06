@@ -1,0 +1,167 @@
+/* General styling */
+body {
+  margin: 0;
+  background: #260707;
+  font-weight: bold;
+  font-size: 80px;
+  font-family: "Raleway", "Helvetica Neue", sans-serif; 
+  scrollbar-width: thin !important;
+  scrollbar-color: #555 #2b2b2b;
+  overflow: hidden; /* Prevent default scrolling */
+}
+
+.parallax {
+  /* The image used */
+  background:#260707;
+
+  /* Set a specific height */
+  min-height: 100vh; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Homepage container */
+.homepage-container {
+  align-items: center;
+  background:linear-gradient(0deg, rgba(0,0,0, 0.6), rgba(32, 31, 31, 0.5)), url("/assets/h.jpg");
+  background-size:cover;
+  height: 100vh; /* Ensure the container takes full viewport height */
+  overflow-y: scroll; /* Enable scrolling within the container */
+  scroll-snap-type: y mandatory; /*  Snap to each section */
+}
+
+/* Hero Section Styling */
+.hero-section, .hero-section-2, .hero-section-3, .hero-section-4 {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Each section takes full viewport height */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  scroll-snap-align: start;  /* Snap to the start of each section */
+}
+
+.hero-section, .hero-section-3 {
+  color: white;
+}
+
+.hero-section-2,.hero-section-4 {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  color: black;
+  text-align: left;
+  width: 100%;
+}
+
+.hero-section-3{
+  background:linear-gradient(0deg, rgba(43,43,43, 0.7), rgba(32, 31, 31, 0.9)), url("/assets/cube.gif") no-repeat center #000;
+  background-size: contain;
+}
+
+.hero-section-3 .text-content p{
+  padding: 20px;
+  font-size: 15px;
+  font-weight: 100;
+}
+
+
+.main-image{
+  box-shadow: 
+    0 50px 40px rgba(0, 0, 0, 0.6), /* Outer shadow */
+    0 100px 50px rgba(255, 255, 255, 0.3) inset, /* Inner glow */
+    0 30px 70px rgba(255, 255, 255, 0.2), /* Outer glow */
+    50px -30px  rgba(106, 178, 79, 0.5);
+}
+
+.text-content {
+  padding-top: 20px;
+  max-width: 50%;
+}
+
+.hero-section-2 .text-content{
+  width: 25% !important;
+  margin-right: 50px;
+}
+
+.hero-section-4 .text-content{
+  width: 35%;
+  margin-right: 50px;
+}
+
+.text-content h1 {
+  font-size: 50px;
+}
+
+.text-content p {
+  font-size: 16px;
+  margin: 20px 0;
+}
+
+button {
+  background: linear-gradient(135deg, #6aa84f, #3c763d);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 200;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background: linear-gradient(135deg, #76c761, #4e8e4c);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.hero-section-3 .text-content h1 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid #4e8e4c; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  text-transform: uppercase;
+  font-size: 40px;
+  animation: 
+  typing 7s steps(80, end) forwards, 
+  blink-caret 0.75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  80% { border-color: #4e8e4c; }
+}
+
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

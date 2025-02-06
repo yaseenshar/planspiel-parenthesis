@@ -1,0 +1,62 @@
+<div class="login-container">
+    <section class="login-section">
+        <div class="login-card">
+            <div class="row g-0 align-items-center">
+                <!-- Image Section -->
+                <div class="col-lg-4 d-none d-lg-flex">
+                    <img src="/assets/logo/Recentlogin.png" alt="Login" class="login-image" />
+                </div>
+
+                <!-- Form Section -->
+                <div class="col-lg-8">
+                    <div class="login-form">
+                        <h2 class="login-title">Welcome Back</h2>
+                        <p class="login-subtitle">Sign in to continue</p>
+
+                        <div class="error">{{ errorMessage }}</div>
+
+                        <form (ngSubmit)="onLogin()">
+                            <!-- Email Input -->
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" [(ngModel)]="email" name="email" required />
+                            </div>
+
+                            <!-- Password Input -->
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" [(ngModel)]="password" name="password" required />
+                            </div>
+
+                            <!-- Remember Me & Forgot Password -->
+                            <div class="options">
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="rememberMe" [(ngModel)]="rememberMe" name="rememberMe" />
+                                    <label for="rememberMe">Remember me</label>
+                                </div>
+                                <a routerLink="/forgot-password" class="forgot-password">Forgot password?</a>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn btn-login">Sign in</button>
+
+                            <!-- Social Login -->
+                            <!-- <div class="social-login">
+                                <p>Or sign in with:</p>
+                                <div class="social-icons">
+                                    <button type="button" class="btn-social"><i class="fab fa-facebook-f"></i></button>
+                                    <button type="button" class="btn-social"><i class="fab fa-google"></i></button>
+                                    <button type="button" class="btn-social"><i class="fab fa-twitter"></i></button>
+                                    <button type="button" class="btn-social"><i class="fab fa-github"></i></button>
+                                </div>
+                            </div> -->
+
+                            <!-- Signup Link -->
+                            <p class="signup-text">Not a member? <a routerLink="/signup">Register</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

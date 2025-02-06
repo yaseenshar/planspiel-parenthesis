@@ -1,0 +1,57 @@
+/* General Styles */
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center; /* Vertically center the content */
+  justify-content: center; /* Horizontally center the content */
+  background-color: #ec964b; 
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff;
+}
+
+/* Container for the boxes */
+.box-container {
+  display: flex;
+  flex-direction: column; /* Stacks the boxes vertically */
+  gap: 20px; /* Space between boxes */
+  padding: 20px;
+  width: 80%; 
+  max-width: 1200px; /* Max width of container */
+  margin: 0 auto; /* Centers the container horizontally */
+  text-align: center; /* Center the text inside the boxes */
+  top: 130px;
+  position: relative;
+}
+
+/* Individual box styles */
+.content-box {
+  background-color: #ec964b; 
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+/* Heading styles */
+.content-box h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+/* Paragraph styles */
+.content-box p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #151515;
+}
+
+/* Hover effect for boxes */
+.content-box:hover {
+  transform: translateY(-10px); /* Lift the box */
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.8); 
+}

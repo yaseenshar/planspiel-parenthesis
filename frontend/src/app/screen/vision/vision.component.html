@@ -1,0 +1,34 @@
+<div class="box-container">
+  <!-- Vision Section -->
+  <div class="content-box" (click)="toggleContent('vision')">
+    <h2>Vision <span class="plus">{{ isContentVisible('vision') ? '-' : '+' }}</span></h2>
+    <div class="hidden-content" *ngIf="isContentVisible('vision')">
+      <p>At Parenthesis, our vision is to transcend traditional boundaries of technology by merging logic with creativity, transforming code into a language of possibilities.</p>
+    </div>
+  </div>
+
+  <!-- About Us Section -->
+  <div class="content-box" (click)="toggleContent('about')">
+    <h2>About Us <span class="plus">{{ isContentVisible('about') ? '-' : '+' }}</span></h2>
+    <div class="hidden-content" *ngIf="isContentVisible('about')">
+      <p>Parenthesis aims to be the software solution that combines the brains of software security experts. It is a chatbot that helps companies and developers to identify security concerns for software in development.</p>
+    </div>
+  </div>
+
+  <!-- Research Work Section -->
+  <div class="content-box" (click)="toggleContent('research')">
+    <h2>Research Work <span class="plus">{{ isContentVisible('research') ? '-' : '+' }}</span></h2>
+    <div class="hidden-content" *ngIf="isContentVisible('research')">
+      <p>We conducted a survey with developers (92.9%) and security professionals, revealing inconsistent security assessments (64.3%) and challenges like time constraints (50%) and lack of expertise (42.9%). Key risks include code vulnerabilities (50%) and data breaches (42.9%), with preferences for real-time alerts (71.4%) and proactive guidance (64.3%).</p>
+    </div>
+  </div>
+
+  <!-- Contact Us Section -->
+  <div class="content-box" (click)="toggleContent('contact')">
+    <h2>Contact Us <span class="plus">{{ isContentVisible('contact') ? '-' : '+' }}</span></h2>
+    <div class="hidden-content" *ngIf="isContentVisible('contact')">
+      <p>We love to collaborate and tackle, your mind matters so write to us right now!</p>
+      <p>Contact us at: {{ email }}</p>
+    </div>
+  </div>
+</div>

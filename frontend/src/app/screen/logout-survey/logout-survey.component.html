@@ -1,0 +1,42 @@
+<div class="survey-container">
+    <div class="survey-card">
+        <img src="/assets/logo/parenthesis_logo.png" alt="Parenthesis Logo" class="survey-logo">
+        <h3 class="survey-title">We Value Your Feedback</h3>
+        <p class="survey-subtitle">Your thoughts help us improve.</p>
+
+        <form (ngSubmit)="submitSurvey()">
+            <!-- Radio Buttons -->
+            <div class="survey-options">
+                <label class="radio-label">
+                    <input type="radio" name="reason" [(ngModel)]="reason" value="Privacy Concerns" required>
+                    <span class="custom-radio"></span> Privacy Concerns
+                </label>
+
+                <label class="radio-label">
+                    <input type="radio" name="reason" [(ngModel)]="reason" value="Technical Issues">
+                    <span class="custom-radio"></span> Technical Issues
+                </label>
+
+                <label class="radio-label">
+                    <input type="radio" name="reason" [(ngModel)]="reason" value="Not Satisfied">
+                    <span class="custom-radio"></span> Not Satisfied
+                </label>
+
+                <label class="radio-label">
+                    <input type="radio" name="reason" [(ngModel)]="reason" value="Other">
+                    <span class="custom-radio"></span> Other
+                </label>
+            </div>
+
+            <!-- Comments Section -->
+            <textarea [(ngModel)]="comments" name="comments" placeholder="Additional Comments"></textarea>
+
+            <!-- Submit Button -->
+            <button type="submit" class="survey-btn">Submit Feedback</button>
+        </form>
+
+        <div class="survey-footer">
+            © 2025 Parenthesis. All rights reserved.
+        </div>
+    </div>
+</div>

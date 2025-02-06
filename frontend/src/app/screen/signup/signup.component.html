@@ -1,0 +1,50 @@
+<section class="signup-container">
+  <div class="signup-wrapper">
+      <div class="signup-card">
+          <h2 class="signup-title">Become a Part of This Awesome Community</h2>
+          <p class="signup-subtitle">Create an account to get started.</p>
+
+          <form (ngSubmit)="onSignup()">
+              <div class="input-group">
+                  <input type="text" id="firstName" [(ngModel)]="firstName" name="firstName" required placeholder="First Name">
+              </div>
+
+              <div class="input-group">
+                  <input type="text" id="lastName" [(ngModel)]="lastName" name="lastName" required placeholder="Last Name">
+              </div>
+
+              <div class="input-group">
+                  <input type="email" id="email" [(ngModel)]="email" name="email" required placeholder="Email">
+              </div>
+
+              <div class="input-group">
+                  <input type="password" id="password" [(ngModel)]="password" name="password" required placeholder="Password">
+              </div>
+
+              <div class="checkbox-group">
+                  <input type="checkbox" id="subscription" [(ngModel)]="subscription" name="subscription">
+                  <label for="subscription">Subscribe to our newsletter</label>
+              </div>
+
+              <button type="submit" class="signup-btn">Sign Up</button>
+<!-- 
+              <p class="or-text">or sign up with:</p>
+
+              <div class="social-icons">
+                  <button type="button" class="social-btn"><i class="fab fa-facebook-f"></i></button>
+                  <button type="button" class="social-btn"><i class="fab fa-google"></i></button>
+                  <button type="button" class="social-btn"><i class="fab fa-twitter"></i></button>
+                  <button type="button" class="social-btn"><i class="fab fa-github"></i></button>
+              </div> -->
+
+              <p class="login-link">
+                  Already have an account? <a routerLink="/login">Log in</a>
+              </p>
+          </form>
+      </div>
+
+      <div class="signup-image">
+          <img src="/assets/logo/login1111.png" alt="Sign Up Image">
+      </div>
+  </div>
+</section>

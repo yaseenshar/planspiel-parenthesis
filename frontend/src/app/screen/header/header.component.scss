@@ -1,0 +1,122 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  z-index: 1000;
+  background-color: #201f1f;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  font-family: "Raleway";
+}
+
+.navbar .nav-links {
+  display: flex;
+  gap: 50px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* Centers the links */
+}
+
+.navbar .action-buttons {
+  display: flex;
+  gap: 15px; /* Adds space between the buttons */
+  align-items: center;
+  margin-left: auto; /* Pushes the buttons to the right */
+}
+
+.logo {
+  font-weight: bold;
+  width: 65px;
+  height: 50px;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 100;
+  font-size: 14px;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-links li a:hover {
+  color: #86c232;
+}
+
+.btn-get-started {
+  background: linear-gradient(135deg, #6aa84f, #3c763d);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-get-started:hover {
+  background: linear-gradient(135deg, #76c761, #4e8e4c);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.active-link {
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  border-bottom: 2px solid #76c761 !important;
+  color: #4CAF50 !important;
+  padding-bottom: 10px;
+}
+
+.btn-view-profile {
+  background: linear-gradient(135deg, #6aa84f, #3c763d);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-view-profile:hover {
+  background: linear-gradient(135deg, #3c763d, #6aa84f);
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.btn-view-profile:active {
+  transform: scale(0.98);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+      padding: 0 20px;
+  }
+
+  .nav-links {
+      gap: 15px;
+  }
+
+  .btn-get-started {
+      padding: 8px 20px;
+      font-size: 14px;
+  }
+}

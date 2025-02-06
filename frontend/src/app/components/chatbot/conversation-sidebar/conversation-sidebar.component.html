@@ -1,0 +1,47 @@
+<div class="sidebar">
+    <!-- New Chat Button -->
+    <div class="new-chat-area">        
+        <button routerLink="/chat" (click)="setActive('')">New Chat</button>
+    </div>
+
+    <!-- Previous Interactions (Expanding List) -->
+    <div class="menu-item" (click)="toggleInteractions()"
+        [class.active]="activeMenu === 'previous_interactions'" 
+        (click)="setActive('previous_interactions')"
+    >
+        <i class="fas fa-history"></i> Previous Interactions
+    </div>
+
+    <ul *ngIf="showInteractions" class="submenu">
+        <li *ngFor="let convo of conversations" [class.active]="convo.conversation_uuid === activeConversationId"
+            (click)="selectConversation(convo.conversation_uuid)">
+            {{ convo.conversation_heading | slice:0:30 }}{{ convo.conversation_heading.length > 30 ? '...' : '' }}
+        </li>
+    </ul>
+
+    <!-- Other Menu Items -->
+    <div class="menu-item" 
+        [class.active]="activeMenu === 'reports'" 
+        (click)="setActive('reports');"
+    >
+        <i class="fas fa-file-alt"></i> Generated Reports
+    </div>
+    <div class="menu-item" 
+        [class.active]="activeMenu === 'insights'" 
+        (click)="setActive('insights')"
+    >
+        <i class="fas fa-chart-line"></i> User Insights
+    </div>
+    <div class="menu-item" 
+        [class.active]="activeMenu === 'support'" 
+        (click)="setActive('support')"
+    >
+        <i class="fas fa-headset"></i> Talk to a Human
+    </div>
+    <div class="menu-item" 
+        [class.active]="activeMenu === 'conversation_summary'" 
+        (click)="setActive('conversation_summary')"
+    >
+        <i class="fas fa-solid fa-receipt"></i> Conversation Summary
+    </div>
+</div>

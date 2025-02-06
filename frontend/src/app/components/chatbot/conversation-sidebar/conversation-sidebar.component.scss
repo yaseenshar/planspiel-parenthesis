@@ -1,0 +1,85 @@
+.sidebar {
+    width: 15vw;
+    background: #1e1e1e;
+    border-right: 1px solid #2c2c2c;
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+    color: #ddd;
+    font-family: 'Raleway';
+    padding: 10px;
+}
+
+/* New Chat Button */
+.new-chat-area {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.new-chat-area button {
+    padding: 10px 15px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 80%;
+}
+
+.new-chat-area button:hover {
+    background: #388E3C;
+}
+
+/* Menu Items */
+.menu-item {
+    padding: 15px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-item:hover {
+    background: #333333;
+    border-bottom: 1px solid #4CAF50;
+}
+
+.menu-item.active {
+    background: linear-gradient(90deg, #3a3a3a, #505050);
+    background: #333333;
+    border-bottom: 1px solid #4CAF50;
+    color: white;
+    font-weight: 500;
+}
+
+.menu-item i {
+    font-size: 0.9rem;
+}
+
+/* Active Selection */
+.submenu {
+    padding-left: 15px;
+}
+
+.submenu li {
+    padding: 10px;
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background 0.3s ease;
+    list-style: none;
+}
+
+.submenu li:hover {
+    background: #444;
+}
+
+.submenu li.active {
+    color: white;
+    font-weight: bold;
+    border-bottom: 1px solid #4CAF50;
+}

@@ -1,0 +1,41 @@
+<div class="chatbot-container">
+    
+    <!-- Header -->
+    <div class="chatbot-header">
+      <h2>AI-assisted Cybersecurity Assistant</h2>
+      <p>Welcome! How can I help you today?</p>
+    </div>
+  
+    <!-- Chat Window -->
+    <div class="chat-window" #chatWindow>
+      <div *ngFor="let chat of chatMessages" class="chat-message" [ngClass]="chat.sender">
+        <!-- Profile Image -->
+        <img
+          [src]="chat.sender === 'user' ? 'assets/user.png' : 'assets/bot.png'"
+          class="profile-pic"
+          alt="Profile"
+        />
+        <!-- Message -->
+        <div class="message">{{ chat.message }}</div>
+      </div>
+    </div>
+  
+    <!-- Quick Action Buttons -->
+    <div class="quick-actions">
+      <button (click)="quickReply('Run a security scan')">Run a Security Scan</button>
+      <button (click)="quickReply('Check for vulnerabilities')">Check for Vulnerabilities</button>
+      <button (click)="quickReply('Generate a report')">Generate a Report</button>
+    </div>
+  
+    <!-- Input Area -->
+    <div class="chat-input">
+      <input
+        type="text"
+        [(ngModel)]="userMessage"
+        placeholder="Type a message..."
+        (keyup.enter)="sendMessage()"
+      />
+      <button *ngIf="!loading" (click)="sendMessage()">Send</button>
+      <div *ngIf="loading" class="loading">Loading...</div>
+    </div>
+  </div>

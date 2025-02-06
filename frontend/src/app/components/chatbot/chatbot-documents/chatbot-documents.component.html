@@ -1,0 +1,29 @@
+<div class="reports-container">
+    <div class="reports-sidebar">
+        <h3>Generated Reports</h3>
+        <small>This section contains all generated documents and reports from your interactions. Search by GUID or report name to download.</small>
+        <hr />
+        <div class="search-bar">
+            <input type="text" placeholder="Search reports..." [(ngModel)]="searchQuery" />
+        </div>
+    </div>
+
+    <div class="reports-grid">
+        <div class="report-card" *ngFor="let report of filteredReports" (click)="selectReport(report)">
+            <h4>{{ report.title }}</h4>
+            <p class="report-date">Generated on: {{ report.date | date: 'medium' }}</p>
+            <br />
+            <p class="report-ID">Conversation GUID: {{report.conversationID}}</p>
+        </div>
+    </div>
+
+    <div class="report-details" *ngIf="selectedReport">
+        <button class="close-btn" (click)="closeReport()">✖</button>
+        <h5>{{ selectedReport.title }}</h5>
+        <p class="report-date">Generated on: {{ selectedReport.date | date: 'fullDate' }}</p>
+        <div class="report-content">
+            <p>{{ selectedReport.content }}</p>
+        </div>
+        <button class="btn-download" (click)="downloadReport(selectedReport)">Download PDF</button>
+    </div>
+</div>

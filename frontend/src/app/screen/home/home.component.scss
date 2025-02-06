@@ -1,0 +1,73 @@
+/* General styling */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #260707;
+  font-weight: bold;
+  font-size: 80px;
+
+}
+
+.homepage-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+
+
+.hero-section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 200px 50px;
+  max-height: 100vh;
+}
+
+.text-content {
+  max-width: 50%;
+}
+
+.text-content h1 {
+  font-size: 40px;
+  color: #2c2c54;
+}
+
+.text-content p {
+  font-size: 16px;
+  color: #0d0d0d;
+  margin: 20px 0;
+}
+
+.btn-main {
+  background-color: #508b49;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.img container { 
+  padding: 0;
+  margin-right: 50px;
+}
+.container {
+  display: flex;
+  justify-content: flex-end; 
+}
+img {
+  float: right;  /* Floats the image to the right */
+  width: 90%;
+  height: 200%;
+  object-fit: cover;               /* Ensures the image covers the area without distortion */
+  background-color: transparent;  /* Ensures no background color is added */
+  box-shadow: none;                /* Removes any shadow effect */
+  border: none;  
+  align-items: center;  
+  border-radius: 100%;             /* Makes the image circular */
+  object-fit: contain;                /* Removes any border */
+}

@@ -1,0 +1,21 @@
+body{
+    background-color: #1f1f1f;
+}
+
+.chat-container {
+    display: flex;
+    height: calc(100vh - 80px);;
+    margin-top: 80px;
+}
+
+app-conversation-sidebar {
+    width: 15vw;
+    border-right: 1px solid #000000;
+    z-index: 900;
+}
+
+router-outlet {
+    flex: 1;
+    display: none;
+}
+
