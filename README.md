@@ -12,7 +12,6 @@ Production-ready frontend documentation for the **Planspiel Parenthesis** web cl
 - [Configuration](#configuration)
 - [Available Scripts](#available-scripts)
 - [Quality and Testing](#quality-and-testing)
-- [About Content (Pinned Repository)](#about-content-pinned-repository)
 - [License](#license)
 
 ## Overview
@@ -164,18 +163,6 @@ Run build verification:
 ```bash
 npm run build
 ```
-
-## About Content (Pinned Repository)
-Short version:
-> Angular frontend for Planspiel Parenthesis: an AI-powered cybersecurity assistant with secure auth, Botpress-based chat, conversation summaries, user insights, and human-escalation support.
-
-One-line tagline:
-> AI-assisted cybersecurity conversation platform frontend built with Angular + Botpress.
-
-Extended version:
-> Planspiel Parenthesis is a production-style Angular frontend focused on guided cybersecurity conversations. It combines authenticated user workflows, real-time Botpress chat interactions, conversation analytics, summary/report experiences, and escalation to human support through backend APIs.
-
-Also available in `docs/about-content.md`.
 
 ## License
 This project is licensed under the terms in `LICENSE`.
