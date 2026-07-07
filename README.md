@@ -1,75 +1,181 @@
-# Group01-Parenthesis
+# Planspiel Parenthesis – Frontend
 
+Production-ready frontend documentation for the **Planspiel Parenthesis** web client.
 
-## Getting started
+## Table of Contents
+- [Overview](#overview)
+- [Core Capabilities](#core-capabilities)
+- [Architecture](#architecture)
+- [Technology Stack](#technology-stack)
+- [Repository Structure](#repository-structure)
+- [Getting Started](#getting-started)
+- [Configuration](#configuration)
+- [Available Scripts](#available-scripts)
+- [Quality and Testing](#quality-and-testing)
+- [About Content (Pinned Repository)](#about-content-pinned-repository)
+- [License](#license)
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## Overview
+Planspiel Parenthesis is an Angular 18 frontend for a conversational cybersecurity assistant experience.  
+The application provides public onboarding pages, authenticated chat workflows, report/summary views, profile management, and escalation to human support.
 
-# README
+This repository contains the **client application** only. It integrates with:
+- A backend API (authentication, conversations, uploads, email escalation).
+- Botpress Cloud (chat sessions, real-time conversation flows, conversation summaries).
 
-## Angular Application Setup and Instructions
+## Core Capabilities
+- Authentication flows:
+  - Login / signup
+  - Forgot password / reset password
+  - Route guarding for protected routes
+- Chat workspace:
+  - Real-time conversation view
+  - Conversation sidebar and routing by conversation ID
+  - Document upload trigger for extraction flow
+- AI operations:
+  - Botpress-based messaging and conversation management
+  - Summary and user insights screens
+- User support:
+  - “Talk to a Human” escalation via backend email service
+- Profile and supporting screens:
+  - User profile page
+  - Public landing page, vision page, logout survey, not-found page
 
-This project is an Angular application. Follow the instructions below to set up and run the project.
+## Architecture
 
-### Prerequisites
+### High-Level Diagram
+```mermaid
+flowchart LR
+  U[Web Browser / User] --> A[Angular Frontend]
 
-- Node.js (v14.x or higher)
-- npm (v6.x or higher)
-- Angular CLI (v12.x or higher)
+  subgraph FE[Angular App]
+    R[Router + Route Guards]
+    C[Chat Components]
+    S[Service Layer]
+    ST[(Local Storage\nToken, Botpress IDs)]
+    A --> R
+    A --> C
+    C --> S
+    R --> S
+    S <--> ST
+  end
 
-### Installation
+  subgraph API[Backend API :3000]
+    AUTH[/auth/*/]
+    CONV[/conversations/*/]
+    UP[/uploads/uploadAndExtract/]
+    EM[/email/escalateQueryToAdmin/]
+  end
 
-1. **Clone the repository**:
-   ```sh
-   git clone https://gitlab.hrz.tu-chemnitz.de/vsr/edu/planspiel/ws2425/group01-parenthesis.git
-   cd frontend
-   ```
+  subgraph BP[Botpress Cloud]
+    CHAT[Realtime Chat/Webhook Client]
+    ADMIN[Admin Client / Summary Tables]
+  end
 
-2. **Install dependencies**:
-   ```sh
-   npm install
-   ```
-
-### Build and Run
-
-1. **Build the Project**:
-   To build the project, use the following command:
-   ```sh
-   npm run build
-   ```
-
-2. **Start the Application**:
-   To start the application, use the following command:
-   ```sh
-   npm start
-   ```
-
-   After a successful start, the application can be accessed at [http://localhost:4200](http://localhost:4200).
-
-### Scripts in `package.json`
-
-Here is a summary of the scripts available in the `package.json` file:
-
-```json
-{
-  "scripts": {
-    "install": "npm install",
-    "build": "ng build",
-    "start": "ng serve"
-  }
-}
+  S --> AUTH
+  S --> CONV
+  S --> UP
+  S --> EM
+  S --> CHAT
+  S --> ADMIN
 ```
 
-### Notes
+> Source file: `docs/architecture.mmd`
 
-- Ensure you have Angular CLI installed globally. If not, you can install it using the following command:
-  ```sh
-  npm install -g @angular/cli
-  ```
+## Technology Stack
+- **Framework:** Angular 18
+- **Language:** TypeScript
+- **Styling/UI:** SCSS, Angular Material, MDB Angular UI Kit
+- **Charts:** Chart.js, ng2-charts
+- **Chat Integration:** `@botpress/chat`, `@botpress/client`
+- **HTTP/Reactive:** Angular HttpClient, RxJS
+- **Testing:** Jasmine + Karma
 
-## Further help
+## Repository Structure
+```text
+src/
+  app/
+    auth/
+      guard/
+      interceptor/
+    components/
+      chatbot/
+      profile-page/
+    screen/
+      public, login, signup, home, vision, auth, logout-survey, ...
+    services/
+      api/
+        authentication/
+        botpress/
+        conversation/
+        email/
+        pdf/
+  environments/
+public/
+  assets/
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Getting Started
 
+### Prerequisites
+- Node.js 18+ (recommended)
+- npm 9+ (recommended)
 
-By following these instructions, you should be able to set up, build, and run the Angular project successfully. If you encounter any issues, please refer to the project documentation or contact the project maintainers for assistance.
+### Installation
+```bash
+npm install
+```
+
+### Run (Development)
+```bash
+npm start
+```
+App URL: `http://localhost:4200`
+
+### Build
+```bash
+npm run build
+```
+
+## Configuration
+Environment configuration is in:
+- `src/environments/environment.ts`
+- `src/environments/environment.prod.ts`
+
+Configured integrations:
+- `apiURL` → backend base URL
+- `botpressApiUrl` + `webhookId` → Botpress connectivity
+
+For production use, keep environment values and credentials in secure configuration pipelines/secrets management.
+
+## Available Scripts
+- `npm start` → start Angular dev server
+- `npm run build` → production build
+- `npm run watch` → development watch build
+- `npm test` → unit tests
+
+## Quality and Testing
+Run the frontend unit tests:
+```bash
+npm test
+```
+
+Run build verification:
+```bash
+npm run build
+```
+
+## About Content (Pinned Repository)
+Short version:
+> Angular frontend for Planspiel Parenthesis: an AI-powered cybersecurity assistant with secure auth, Botpress-based chat, conversation summaries, user insights, and human-escalation support.
+
+One-line tagline:
+> AI-assisted cybersecurity conversation platform frontend built with Angular + Botpress.
+
+Extended version:
+> Planspiel Parenthesis is a production-style Angular frontend focused on guided cybersecurity conversations. It combines authenticated user workflows, real-time Botpress chat interactions, conversation analytics, summary/report experiences, and escalation to human support through backend APIs.
+
+Also available in `docs/about-content.md`.
+
+## License
+This project is licensed under the terms in `LICENSE`.
