@@ -1,0 +1,33 @@
+flowchart LR
+  U[Web Browser / User] --> A[Angular Frontend]
+
+  subgraph FE[Angular App]
+    R[Router + Route Guards]
+    C[Chat Components]
+    S[Service Layer]
+    ST[(Local Storage\nToken, Botpress IDs)]
+    A --> R
+    A --> C
+    C --> S
+    R --> S
+    S <--> ST
+  end
+
+  subgraph API[Backend API :3000]
+    AUTH[/auth/*/]
+    CONV[/conversations/*/]
+    UP[/uploads/uploadAndExtract/]
+    EM[/email/escalateQueryToAdmin/]
+  end
+
+  subgraph BP[Botpress Cloud]
+    CHAT[Realtime Chat/Webhook Client]
+    ADMIN[Admin Client / Summary Tables]
+  end
+
+  S --> AUTH
+  S --> CONV
+  S --> UP
+  S --> EM
+  S --> CHAT
+  S --> ADMIN
